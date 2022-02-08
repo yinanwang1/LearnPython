@@ -10,28 +10,19 @@
 # Examples of valid words include "a-b.", "afad", "ba-c", "a!", and "!".
 # Given a string sentence, return the number of valid words in sentence.
 
-
 class Solution:
     def countValidWords(self, sentence: str) -> int:
         words = sentence.split(' ')
-        marks = ['!', '.', ',']
-        digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
         res = 0
+        import re
         for word in words:
             if 0 >= len(word):
                 continue
-            hyphensNumber = 0
-            for i, c in enumerate(word):
-                lastIndex = len(word) - 1
-                if c in digits:
-                    break
-                if c == '-':
-                    hyphensNumber += 1
-                    if hyphensNumber > 1 or i == 0 or i == lastIndex or word[i + 1] in marks:
-                        break
-                if c in marks and i != lastIndex:
-                    break
-            else:
+            match = re.match(r'^([,.!]|[a-z]+(-[a-z]+)?[,.!]?)$', word)
+            if len(word) == 1:
+                match = re.match(r'^([a-z.,!])', word)
+            if match is not None:
+                print(word)
                 res += 1
 
         return res
