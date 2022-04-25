@@ -1,9 +1,8 @@
 # 查找调度任务
 
-uid = "1587648938508388"
-type = 0
-date = "2022-03-27 12:03:07"
-
+uid = "1645188534551346"
+type = 7
+date = "2022-04-24 18:51:42"
 
 def main():
     import time
@@ -11,6 +10,8 @@ def main():
     timeStamp = int(time.mktime(inputDate))
     content = "http://erp.qeebike.com/#/cityOperation/bikeOperation/data" \
               "/dispatch_salvage_statistics/detail/{}?".format(uid)
+    if 7 == type:
+        content = "https://erp.qeebike.com/#/cityOperation/bikeOperation/data/dispatch_bike_deploy_history?"
     oneDay = 24 * 60 * 60
     params = {
         'type': type,
@@ -18,6 +19,9 @@ def main():
         'end_time': timeStamp + oneDay,
         'name': '美好未来'
     }
+
+    if 7 == type:
+        params["uid"] = uid
     from urllib.parse import urlencode
     print(content + urlencode(params, encoding='utf8'))
 
