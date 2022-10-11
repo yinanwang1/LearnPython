@@ -1,16 +1,11 @@
 
 # 从桌面的log日志文件中获取单车type为2的内容，并将结果保存桌面
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, scoped_session
-import pymysql
-import sys
-import openpyxl
-import time
-import os
-import datetime
-from dateutil.relativedelta import relativedelta
 import json
+import os
+import time
+
+import openpyxl
 
 battery_quantity = 'battery_quantity'
 location = 'location'
