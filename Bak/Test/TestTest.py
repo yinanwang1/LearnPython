@@ -1,8 +1,13 @@
 
 
+value = "👤"
 
-res = exec("print(2 + 2)")
-print(res)
+print(f"{value!a}")
+
+
+value1 = "\U0001f464"
+
+print(value1)
 
 
 
