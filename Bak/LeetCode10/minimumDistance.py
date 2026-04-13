@@ -17,4 +17,3 @@ class Solution:
 
         return -1 if len(nums) * 3 == res else res
 
-
