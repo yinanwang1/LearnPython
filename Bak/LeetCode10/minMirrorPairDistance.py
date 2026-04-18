@@ -18,5 +18,5 @@ class Solution:
 
 
 if __name__ == '__main__':
-    # print(Solution().minMirrorPairDistance([1, 2, 3, 4, 5]))
+    print(Solution().minMirrorPairDistance([1, 2, 3, 4, 5]))
     # print(Solution().minMirrorPairDistance([9,9]))
