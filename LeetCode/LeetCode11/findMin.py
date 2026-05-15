@@ -7,10 +7,15 @@ from typing import List
 
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        value = nums[0]
-        for i, v in enumerate(nums, start=1):
-            if v < value:
-                return v
-        else:
-            return value
+        n = len(nums)
+        left = 0
+        right = n - 1
+        while left < right:
+            mid = left + (right - left) // 2
+            if nums[mid] > nums[right]:
+                left = mid + 1
+            else:
+                right = mid
+
+        return nums[left]
 
