@@ -7,24 +7,20 @@ from typing import List
 
 class Solution:
     def longestCommonPrefix(self, arr1: List[int], arr2: List[int]) -> int:
-        prefixes:dict[str, int] = {}
-        for i in range(len(arr1)):
-            value = str(arr1[i])
-            for l in range(len(value)):
-                prefixes.setdefault(value[:l + 1], 1)
+        seen = set()
+        for num in arr1:
+            while num:
+                seen.add(num)
+                num //= 10
         ans = 0
-        for j in arr2:
-            value = str(j)
-            if ans >= len(value):
-                continue
-            for index in range(len(value), -1, -1):
-                if ans >= index +1:
+        for num in arr2:
+            while num:
+                if num in seen:
+                    ans = max(num, ans)
                     break
-                v = prefixes.get(value[:index], 0)
-                if v:
-                    ans = max(index, ans)
-                    break
+                num //= 10
 
-        return ans
+        return 0 if 0 == ans else len(str(ans))
+
 
 
