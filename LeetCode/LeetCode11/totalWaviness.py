@@ -22,9 +22,4 @@ class Solution:
 
 
 if __name__ == '__main__':
-    # print(Solution().totalWaviness(num1 = 120, num2 = 130))
-
-    list_a = [1, 2, 3]
-    list_c = [4, 5, 6, 7]
-    list_d = [i * j for i, j in zip(list_a, list_c)]
-    print(list_d)
+    print(Solution().totalWaviness(num1 = 100, num2 = 999))
