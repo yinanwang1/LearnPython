@@ -22,7 +22,7 @@ class Solution:
 
 
 if __name__ == '__main__':
-    # nums = [18,19,20,21,22,23,24,25,26,27,28,9]
-    nums = [4,5,6,7,8,8,9,4,3,2,7]
+    nums = [18,19,20,21,22,23,24,25,26,27,28,9]
+    # nums = [4,5,6,7,8,8,9,4,3,2,7]
     solution = Solution()
     print(solution.missingInteger(nums))
